@@ -1,28 +1,52 @@
+const box = document.querySelector('.box');
+let rotateY = 80;
+let rotateX = 10;
+let rotateZ = 10;
+
 (function () {
-    const container = document.querySelector('.box');
-
-    let rotateY = 50;
-    let rotateX = 28;
-
-    container.style.transform =
+    box.style.transform =
         `rotateY(${+rotateY}deg) rotateX(${+rotateX}deg) `
 
     document.onkeydown = function (item) {
-        if (item.keyCode === 37) rotateY -= 2;
-        else if (item.keyCode === 38) rotateX += 2;
-        else if (item.keyCode === 39) rotateY += 2;
-        else if (item.keyCode === 40) rotateX -= 2;
+        if (item.keyCode === 37) rotateZ -= 2;     // влево
+        else if (item.keyCode === 39) rotateZ += 2; // вправо
+        else if (item.keyCode === 38) rotateX += 2; // вверх
+        else if (item.keyCode === 40) rotateX -= 2; // вниз
 
-        container.style.transform =
-            `rotateY(${+rotateY}deg) rotateX(${+rotateX}deg) `
+        box.style.transform =
+            `rotateY(${+rotateY}deg)
+             rotateX(${+rotateX}deg)
+             rotateZ(${+rotateZ}deg)
+             `
     };
 })();
 
+let xxx = 0
+const container = document.querySelector('.container')
+
+function flight () {
+    xxx += 0.0001
+
+    container.style.transform = `
+            translateY(${ Math.sin(xxx / 100) * 100 }px)
+            translateX(${ xxx++ }px)`
+
+    box.style.transform = `
+        rotateY(${ +rotateY  + -Math.sin(xxx / 100) * 10 }deg)
+        rotateX(${ +rotateX}deg)
+        rotateZ(${ rotateZ + Math.sin(xxx / 1000) * 10 }deg)`
+
+    window.scrollBy((xxx), 0)
+
+    requestAnimationFrame(flight)
+}
+
+flight()
 
 class Create3dBox {
     constructor(
         height = 50,
-        length = 200
+        length = 175
     ) {
         // параметры
         this.height = height

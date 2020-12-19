@@ -14,23 +14,32 @@ body {
     color: #ccc;
     user-select: none;
     overflow: hidden;
-    background-image: url("../img/bg.jpg");
+    background-image: url("../img/bg2.jpg");
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
 }
 
-.wrapper {
-    outline: 2px solid red;
+h1 {
+    position: fixed;
+}
+
+.container {
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: -50%;
     margin: auto;
 
     width: 100px;
     height: 100px;
+    padding: 0 500px;
     perspective: 500px;
+
+    animation-name: jet;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
 .box {
@@ -39,6 +48,11 @@ body {
     line-height: 100px;
     transform-style: preserve-3d;
     transform: rotateY(20deg) rotateX(0deg);
+
+    animation-name: box-rotate;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
 }
 
 .box__wing,
@@ -49,11 +63,14 @@ body {
     text-align: center;
     line-height: inherit;
     background: coral;
+    border: 1px solid black;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/* -------- крылья */
 
 .box__wing {
     width: 150px;
@@ -78,43 +95,27 @@ body {
     text-shadow: 0 0 5px black;
 }
 
-.box__side--bottom {
-    background: red;
-    transform: translateZ(-50px) translateY(-50px) rotateX(-90deg);
+/* -------- хвост */
+
+.box__tail {
+    transform:
+            rotateX(0deg)
+            rotateY(-90deg)
+            translateY(-50px)
+            translateX(-125px)
+            translateZ(0px);
+    border-top-right-radius: 100%;
 }
 
-.box__side--top {
-    background: black;
-    transform: translateZ(-50px) translateY(-100px) rotateX(90deg);
+/* ----------- декор */
+
+.box__side--front::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height : 20px;
+    background: blue;
 }
-
-/* ------------------------ */
-/*.side-front {*/
-/*    transform: translateZ(50px);*/
-/*}*/
-
-/*.side-back {*/
-/*    transform: rotateY(-180deg) translateZ(50px);*/
-/*}*/
-
-/*.side-right {*/
-/*    transform: rotateY(90deg) translateZ(50px);*/
-/*}*/
-
-/*.side-left {*/
-/*    transform: rotateY(-90deg) translateZ(50px);*/
-/*}*/
-
-
-
-
-
-
-
-
-
-
-
 
 
 
