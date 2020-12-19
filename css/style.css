@@ -14,6 +14,9 @@ body {
     color: #ccc;
     user-select: none;
     overflow: hidden;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .wrapper {
@@ -30,7 +33,7 @@ body {
     perspective: 500px;
 }
 
-.jet {
+.box {
     width: inherit;
     height: inherit;
     line-height: 100px;
@@ -38,30 +41,52 @@ body {
     transform: rotateY(20deg) rotateX(0deg);
 }
 
-.side {
+.box__wing,
+.box__side {
     position: absolute;
     width: inherit;
     height: inherit;
-    border: 2px solid black;
     text-align: center;
     line-height: inherit;
-    background: gray;
+    background: coral;
 
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.box__wing {
+    width: 150px;
+}
 
-/*.side-top {*/
-/*    transform: rotateX(0deg)translateZ(50px);*/
-/*    display: none;*/
-/*}*/
+.box__wing--left {
+    transform: rotateX(90deg) translateY(-50px) translateX(-150px) translateZ(50px);
+    border-bottom-left-radius: 50%;
+    border-top-right-radius: 10%;
+}
 
-/*.side-bottom {*/
-/*    transform: rotateX(-90deg) translateZ(50px);*/
-/*    display: none;*/
-/*}*/
+.box__wing--right {
+    transform: rotateX(90deg) translateY(-50px) translateX(100px) translateZ(50px);
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 10%;
+}
+
+.box__side--left,
+.box__side--right {
+    color: blue;
+    font-size: 100px;
+    text-shadow: 0 0 5px black;
+}
+
+.box__side--bottom {
+    background: red;
+    transform: translateZ(-50px) translateY(-50px) rotateX(-90deg);
+}
+
+.box__side--top {
+    background: black;
+    transform: translateZ(-50px) translateY(-100px) rotateX(90deg);
+}
 
 /* ------------------------ */
 /*.side-front {*/
