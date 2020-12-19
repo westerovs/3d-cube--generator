@@ -1,3 +1,3 @@
-# two-binding-checkbox-vuex
+# 3d cube generator
 <br>
-<img src="cover.jpg">
+<img src="cover.png">

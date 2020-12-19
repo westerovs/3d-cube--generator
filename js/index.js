@@ -22,11 +22,11 @@
 class Create3dBox {
     constructor(
         width  = 100,
-        height = 90
+        height = 50
     ) {
         // параметры
         this.height = height
-        this.length = 100
+        this.length = 300
 
         this.sides     = document.querySelectorAll('.side')
         this.sideFront = document.querySelector('.side-front')
