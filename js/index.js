@@ -1,28 +1,5 @@
-const box = document.querySelector('.box');
-let rotateY = 40;
-let rotateX = 40;
-let rotateZ = 0;
-
-(function () {
-  box.style.transform = `rotateY(${ +rotateY }deg) rotateX(${ +rotateX }deg) `
-
-  document.onkeydown = function (item) {
-    console.log(item)
-
-      if (item.code === 'KeyW') rotateX += 2; // вверх
-      else if (item.code === 'KeyS') rotateX -= 2; // вниз
-      else if (item.code === 'KeyQ') rotateY -= 2; // вниз
-      else if (item.code === 'KeyE') rotateY += 2; // вниз
-      else if (item.code === 'KeyA') rotateZ -= 2;     // влево
-      else if (item.code === 'KeyD') rotateZ += 2; // вправо
-
-    box.style.transform =
-      `rotateY(${ +rotateY }deg)
-             rotateX(${ +rotateX }deg)
-             rotateZ(${ +rotateZ }deg)
-             `
-  };
-})();
+import { initControls } from './utils/controls.js'
+initControls()
 
 
 class Create3dBox {
