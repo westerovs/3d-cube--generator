@@ -16,44 +16,80 @@ body {
     overflow: hidden;
 }
 
-
 .container {
     position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 100px;
     height: 100px;
-    padding: 0 500px;
     perspective: 500px;
 }
 
 .box {
+    outline: 1px dashed red;
     width: inherit;
     height: inherit;
     line-height: 100px;
     transform-style: preserve-3d;
-    transform: rotateY(40deg) rotateX(40deg);
-
-    animation-name: box-rotate;
-    animation-duration: 5s;
-    animation-fill-mode: forwards;
-    animation-iteration-count: infinite;
+    transform: rotateY(20deg) rotateX(40deg);
+    transform-origin: center;
 }
+
+.axis {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+
+    display: flex;
+    width: 1px;
+    height: 200px;
+    background: white;
+}
+
+.axis span {
+    position: absolute;
+    top: -70px;
+    color: red;
+    font-size: 30px;
+}
+
+/* AXIS Y */
+.axis-x {
+    transform: translateY(-100px);
+}
+
+/* AXIS Y */
+.axis-y {
+    transform: translateX(100px) rotate(90deg);
+}
+
+.axis-y span {
+    transform: rotate(-90deg);
+}
+
+/* AXIS Z */
+.axis-z {
+    transform: translateZ(100px) rotateX(-90deg);
+}
+
 
 .box__side {
     position: absolute;
-    width: inherit;
-    height: inherit;
-    text-align: center;
-    line-height: inherit;
-    border: 1px solid black;
-
     display: flex;
     justify-content: center;
     align-items: center;
+    width: inherit;
+    height: inherit;
+    transform-origin: center;
+    border: 1px solid black;
+
+    background: gray;
+    text-align: center;
+    line-height: inherit;
 }
 
 
