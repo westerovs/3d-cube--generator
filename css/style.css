@@ -58,16 +58,17 @@ body {
 }
 
 /* AXIS Y */
-.axis-x {
+.axis-y {
     transform: translateY(-100px);
 }
 
-/* AXIS Y */
-.axis-y {
+
+/* AXIS X */
+.axis-x {
     transform: translateX(100px) rotate(90deg);
 }
 
-.axis-y span {
+.axis-x span {
     transform: rotate(-90deg);
 }
 

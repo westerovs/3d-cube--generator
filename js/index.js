@@ -27,14 +27,8 @@ class Cube {
     this.sideTop.style.transform = `translateZ(${ 0 }px) translateY(-${ this.height / 2 }px) rotateX(90deg)`
     this.sideBottom.style.transform = `translateZ(${ 0 }px) translateY(${ this.height / 2 }px) rotateX(-90deg)`
 
-    this.sideLeft.style.transform = `translateZ(${ 0 }px) translateY(${ 0 }px) rotateX(0deg)`
-
-
-
-    // this.sideRight.style.transform = `
-    //         rotateY(${ this.rotateY }deg)
-    //         translateX(${ (this.length / 2) - this.translate }px)
-    //         translateZ(${ (this.length / 2) - (this.length - 100) }px)`
+    this.sideLeft.style.transform = `translateX(-${ this.height / 2 }px) rotateY(-90deg)`
+    this.sideRight.style.transform = `translateX(${ this.height / 2 }px) rotateY(90deg)`
   }
 }
 
